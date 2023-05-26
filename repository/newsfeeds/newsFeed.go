@@ -13,7 +13,9 @@ type NewsFeeds struct{
 
 //func function_name  return_type
 func New() (n *NewsFeeds){
-	return &NewsFeeds{}
+	return &NewsFeeds{
+		Items: []Item{},
+	}
 }
 
 //func Input_type function_name

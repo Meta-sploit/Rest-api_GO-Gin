@@ -9,6 +9,6 @@ func main(){
 	r:=gin.Default();  
     
 	r.GET("/",handler.PingGet())
-
+    r.GET("/news",handler.GetNews())
 	r.Run(":8080")
 }
