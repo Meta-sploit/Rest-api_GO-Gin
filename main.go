@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"newsfeeder/httpd/handler"
+	"github.com/gin-gonic/gin"
+)
+
+
 
 func main(){
-	fmt.Println("hello world")
+	r:=gin.Default();  
+    
+	r.GET("/",handler.PingGet)
+
+	r.Run(":8080")
+
 }
