@@ -42,6 +42,7 @@ func main() {
 		duration := time.Since(start).Seconds()
 		requestDuration.Observe(duration)
 	})
+        
 
 	r.GET("/news", func(c *gin.Context) {
 		requestsProcessed.Inc()
@@ -61,7 +62,7 @@ func main() {
 		requestDuration.Observe(duration)
 	})
 
-	r.GET("/metrics", gin.WrapH(promhttp.Handler())) // Expose metrics endpoint
+	r.GET("/metric", gin.WrapH(promhttp.Handler())) // Expose metrics endpoint
 	r.GET("/health", func(c *gin.Context) {
 		requestsProcessed.Inc()
 		start := time.Now()
